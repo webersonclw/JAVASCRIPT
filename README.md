@@ -27,7 +27,6 @@
         d.style.background = 'green'
         d.innerText = 'Estou aguardando'
         p1.style.color = 'black'
-
     </script>
 </body>
 </html>
