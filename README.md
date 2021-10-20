@@ -4,42 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos DOM</title>
+    <title>|Somando Numeros</title>
     <style>
-        div#area {
-            font: normal 20pt arial;
-            background: rgba(42, 139, 42);
-            color: white;
-            width: 200px;
-            height: 200px;
-            line-height: 200px;
-            text-align: center;
+        body {
+            font: normal 18pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div#res {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="area">
-        <img src="https://developer.mozilla.org/pt-BR/docs/Web/Events" alt="Eventos DOM">
-        
-    </div>
-
+    <h1>Somando Valores</h1>
+    <input type="number" name='txtn1' id='txtn1'> +
+    <input type="number" name='txtn2' id='txtn2'>
+    <input type="button" value='Somar' onclick="somar()">
+    <div id='res'>Resultado</div>
     <script>
-        var a = window.document.getElementById('area')
-        a.addEventListener('click', clicar)
-        a.addEventListener('mouseenter', entrar)
-        a.addEventListener('mouseout', sair)
-
-
-        function clicar() {
-           a.innerText = 'Clicou'
-           a.style.background = 'red'
-        }
-        function entrar() {
-            a.innerText = 'Entrou'
-        }
-        function sair() {
-            a.innerText = 'Saiu'
-            a.style.background = 'green'
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
         }
     </script>
 </body>
