@@ -4,29 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiros Passos com DOM</title>
+    <title>Eventos DOM</title>
     <style>
-        body {
-            background: rgba(68, 125, 199);
+        div#area {
+            font: normal 20pt arial;
+            background: rgba(42, 139, 42);
             color: white;
-            font: normal 18pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
         }
-
     </style>
 </head>
 <body>
-    <h1>Iniciando estudo com DOM</h1>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em JavScript.</p>
-    <div id="msg">Clique aqui</div>
+    <div id="area">
+        <img src="https://developer.mozilla.org/pt-BR/docs/Web/Events" alt="Eventos DOM">
+        
+    </div>
+
     <script>
-        var corpo = window.document.body
-        var p1 = window.document.getElementsByTagName('p')[0]
-        window.document.write(p1.innerText)
-        var d =window.document.getElementById('msg')
-        d.style.background = 'green'
-        d.innerText = 'Estou aguardando'
-        p1.style.color = 'black'
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+
+        function clicar() {
+           a.innerText = 'Clicou'
+           a.style.background = 'red'
+        }
+        function entrar() {
+            a.innerText = 'Entrou'
+        }
+        function sair() {
+            a.innerText = 'Saiu'
+            a.style.background = 'green'
+        }
     </script>
 </body>
 </html>
